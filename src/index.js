@@ -43,13 +43,13 @@ app.post('/form/create', (req, res) => {
     createForm(date, week, orders)
         .then(response => res.json(response))
         .catch(err => res.json(err))
-})
+});
 
 app.get('/form/list', (req, res) => {
     listForms()
         .then(forms => res.json(forms))
         .catch(err => res.json(err))
-})
+});
 
 app.post('/form/find', (req, res) => {
     const { date } = req.body;
@@ -73,7 +73,7 @@ app.post('/form/find', (req, res) => {
             })
             .catch(err => res.json(err))
     }
-})
+});
 
 app.post('/form/remove', (req, res) => {
     const { date } = req.body;
@@ -81,6 +81,6 @@ app.post('/form/remove', (req, res) => {
     deleteForm(date)
         .then(response => res.json(response))
         .catch(err => res.json(err))
-})
+});
 
 app.listen(port);
